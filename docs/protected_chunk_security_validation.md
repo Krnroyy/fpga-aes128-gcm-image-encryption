@@ -32,3 +32,9 @@ Built for `xczu7ev-ffvc1156-2-e` with Vivado 2026.1. Bitstream generation comple
 The design met its 75 MHz timing constraint: setup WNS was +0.975 ns and hold WHS was +0.002 ns, with no failing endpoints. Hierarchical utilization reported 371 LUTs, 238 FFs, and 2 RAMB36 blocks for the protected chunk buffer; the AES-GCM block used 12,931 LUTs and 3,803 FFs.
 
 Vivado estimated total on-chip power at 3.602 W using vector-less activity. The report warns that reset activity may make this estimate inaccurate. Physical-board validation and power measurement are pending access to the ZCU104.
+
+## Post-route hold-path review
+
+Reviewed the five worst hold paths from the routed Vivado implementation using `report_timing -delay_type min -max_paths 5 -sort_by slack`. All five were reported as MET. The worst path had +0.002 ns slack at the slow process corner; the other four were +0.004 ns, +0.004 ns, +0.006 ns, and +0.007 ns.
+
+The worst path runs from an AXI DMA S2MM skid-buffer register to a memory subsystem write skid-buffer register. It is in the generated DMA/memory infrastructure, not the protected-chunk or AES-GCM RTL. The margin is small but positive in this implementation report; no RTL change was made. Board validation remains pending access to the ZCU104.
