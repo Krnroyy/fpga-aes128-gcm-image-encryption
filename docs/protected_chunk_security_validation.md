@@ -38,3 +38,7 @@ Vivado estimated total on-chip power at 3.602 W using vector-less activity. The 
 Reviewed the five worst hold paths from the routed Vivado implementation using `report_timing -delay_type min -max_paths 5 -sort_by slack`. All five were reported as MET. The worst path had +0.002 ns slack at the slow process corner; the other four were +0.004 ns, +0.004 ns, +0.006 ns, and +0.007 ns.
 
 The worst path runs from an AXI DMA S2MM skid-buffer register to a memory subsystem write skid-buffer register. It is in the generated DMA/memory infrastructure, not the protected-chunk or AES-GCM RTL. The margin is small but positive in this implementation report; no RTL change was made. Board validation remains pending access to the ZCU104.
+
+### Device-level utilization
+
+For the routed `system_wrapper` design on `xczu7ev-ffvc1156-2-e`, Vivado 2026.1 reported: CLB LUTs 20,112/230,400 (8.73%); CLB registers 12,966/460,800 (2.81%); block RAM tiles 7/312 (2.24%), comprising 6 RAMB36 and 2 RAMB18; URAM 0/96; DSPs 0/1,728. These are whole-design totals, including the processing system, DMA, interconnect, and custom logic. The RAMB36, RAMB18, and block RAM tile percentages are separate report views and should not be added together.
