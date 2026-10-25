@@ -20,3 +20,7 @@ source $script
 ## Per-cycle write-protection check
 
 The integration test holds an overwrite attempt valid for three clock cycles after authentication. On each rising edge, it checks that \capture_tready\ and the buffer's internal \memory_write_en\ are low. It then verifies that STATUS bit 9 (\write_blocked\) is set.
+
+## Checker sensitivity mutation test
+
+A temporary copy of the buffer RTL was changed to assert memory_write_en when the buffer was locked and input valid was asserted. The integration test detected the injected defect at 4296 ns (TREADY=0 MEM_WRITE_EN=1) and stopped before release. This confirms the test detects this specific injected bug; it is simulation evidence, not a formal proof.
