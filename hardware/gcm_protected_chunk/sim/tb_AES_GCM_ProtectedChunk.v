@@ -362,16 +362,30 @@ begin
     end
     $display("PASS: locked ciphertext authenticated with no plaintext output");
 
-    // Try to overwrite the chunk after authentication but before release.
+       // Try to overwrite the authenticated chunk before release.
+    // The locked buffer must refuse the stream and keep its BRAM write
+    // path disabled on every checked clock.
     capture_tdata = 128'hBAD0BAD0BAD0BAD0BAD0BAD0BAD0BAD0;
     capture_tkeep = 16'hFFFF;
     capture_tlast = 1'b1;
     capture_tvalid = 1'b1;
-    repeat(3) @(posedge aclk);
+
+    repeat (3) begin
+        @(posedge aclk);
+        #1;
+        if (capture_tready !== 1'b0 ||
+            buffer.memory_write_en !== 1'b0) begin
+            $display(
+                "FAIL: locked buffer write path active TREADY=%b MEM_WRITE_EN=%b",
+                capture_tready, buffer.memory_write_en
+            );
+            $finish;
+        end
+    end
+
     capture_tvalid = 1'b0;
     buffer_read(6'h04, status);
-    if(capture_tready || !status[9])
-    begin
+    if (capture_tready !== 1'b0 || !status[9]) begin
         $display("FAIL: TOCTOU write was not blocked STATUS=%08h", status);
         $finish;
     end
@@ -382,12 +396,13 @@ begin
     release_check_active = 1'b1;
     begin_gcm(2'd1, EXPECTED_TAG);
     buffer_write(6'h00, 32'h00000002);
-    while(!gcm.stream_done) @(posedge aclk);
+    while (!gcm.stream_done) @(posedge aclk);
     @(negedge aclk);
     release_check_active = 1'b0;
     gcm_read(7'h04, status);
-    if(!status[6] || status[7] || release_words != 2 || release_error)
-    begin
+
+    if (!status[6] || status[7] ||
+        release_words != 2 || release_error) begin
         $display("FAIL: authenticated release STATUS=%08h WORDS=%0d ERROR=%0d",
                  status, release_words, release_error);
         $finish;
@@ -395,15 +410,16 @@ begin
     $display("PASS: same locked bytes decrypted and released after authentication");
 
     buffer_write(6'h00, 32'h00000004);
-    while(buffer.state != 3'd0) @(posedge aclk);
+    while (buffer.state != 3'd0) @(posedge aclk);
+
     capture_ciphertext(1'b1);
     any_output_seen = 1'b0;
     begin_gcm(2'd2, EXPECTED_TAG);
     buffer_write(6'h00, 32'h00000002);
-    while(!gcm.stream_done) @(posedge aclk);
+    while (!gcm.stream_done) @(posedge aclk);
     gcm_read(7'h04, status);
-    if(!status[8] || status[6] || !status[7] || any_output_seen)
-    begin
+
+    if (!status[8] || status[6] || !status[7] || any_output_seen) begin
         $display("FAIL: tampered locked chunk STATUS=%08h OUTPUT=%0d",
                  status, any_output_seen);
         $finish;
@@ -411,13 +427,14 @@ begin
     $display("PASS: tampered chunk rejected before any decrypt/release pass");
 
     buffer_write(6'h00, 32'h00000004);
-    while(buffer.state != 3'd0) @(posedge aclk);
-    if(buffer.protected_chunk_memory.memory[0] !== 128'd0 ||
-       buffer.protected_chunk_memory.memory[255] !== 128'd0)
-    begin
+    while (buffer.state != 3'd0) @(posedge aclk);
+
+    if (buffer.protected_chunk_memory.memory[0] !== 128'd0 ||
+        buffer.protected_chunk_memory.memory[255] !== 128'd0) begin
         $display("FAIL: protected storage not zeroized");
         $finish;
     end
+
     $display("PASS: rejected ciphertext zeroized from protected storage");
     $display("PASS: AES-GCM PROTECTED CHUNK INTEGRATION MILESTONE");
     $finish;

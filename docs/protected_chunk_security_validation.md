@@ -17,3 +17,6 @@ Run it from the Vivado Tcl Console:
 set script {C:/vlsi/fpga-aes128-gcm-image-encryption-review/hardware/gcm_protected_chunk/sim/run_protected_chunk_validation_2026_1.tcl}
 if {![file exists $script]} { error "Validation script not found: $script" }
 source $script
+## Per-cycle write-protection check
+
+The integration test holds an overwrite attempt valid for three clock cycles after authentication. On each rising edge, it checks that \capture_tready\ and the buffer's internal \memory_write_en\ are low. It then verifies that STATUS bit 9 (\write_blocked\) is set.
