@@ -95,7 +95,7 @@ tools/analyze_results.py       Reproduces tables, hashes and figures
 
 The protected-chunk co-design milestone eliminates external DDR release before authentication tag verification. Captured chunk ciphertext is held in an on-chip buffer (`ProtectedChunkMemory_BRAM.v`) and replayed for authentication-only calculation while output DMA is disarmed. Decryption and DMA plaintext release occur only after authentication passes.
 
-Refactoring the protected buffer storage into a synchronous simple-dual-port memory enabled block-RAM inference, reducing protected memory utilization from 58,392 LUTs to **86 LUTs and 2 RAMB36 blocks**, while improving WNS to **+0.975 ns** at 75.002 MHz. Physical ZCU104 testing verified 100% chunk acceptance across 17×19 (1/1), 256×256 (48/48), and 512×512 (192/192) image runs.
+The before-and-after Vivado utilization reports show the protected buffer wrapper decreasing from **58,392 to 371 LUTs**, from **33,421 to 238 FFs**, and from **0 to 2 RAMB36 blocks**. In the optimized hierarchy, the memory child uses 86 LUTs and 2 RAMB36 blocks. The full-design totals in that report pair are 78,133 and 20,112 LUTs; these are report totals, not a claim that every change in the design came from the buffer refactor. Physical ZCU104 testing passed at 17×19 (1/1), 256×256 (48/48), and 512×512 (192/192) chunks. The paired evidence and scope notes are in [the BRAM comparison folder](results/protected_chunk_bram_comparison/).
 
 For full architectural, protocol, and resource details, see [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md).
 

@@ -31,7 +31,7 @@ Note: `gcm_dma` remains the original baseline AES-GCM DMA architecture.
 | `ProtectedChunkBuffer_AXIS.v` | AXI4-Stream interface, chunk locking controller, 2-pass replay control, and zeroization logic |
 | `ProtectedChunkMemory_BRAM.v` | Synchronous simple-dual-port BRAM primitive storing up to 4096 bytes of chunk ciphertext |
 
-The BRAM implementation refactors protected ciphertext storage to enable block-RAM inference, utilizing **86 LUTs** and **2 RAMB36 blocks** (compared to 58,392 LUTs in the pre-optimization baseline).
+The before-and-after utilization reports compare the same protected-buffer wrapper: **58,392 LUTs, 33,421 FFs, and 0 RAMB36** before; **371 LUTs, 238 FFs, and 2 RAMB36** after BRAM inference. The optimized memory child itself uses 86 LUTs and 2 RAMB36 blocks. See [`results/protected_chunk_bram_comparison/`](../results/protected_chunk_bram_comparison/) for the reports and hashes.
 
 Use the validation script `hardware/gcm_protected_chunk/sim/run_protected_chunk_validation_2026_1.tcl` before executing the build scripts under `hardware/gcm_protected_chunk/scripts/`.
 

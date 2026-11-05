@@ -103,18 +103,21 @@ The central engineering trade-off is therefore measurable: approximately 27% low
 
 The protected-chunk milestone introduces an on-chip buffer (`ProtectedChunkMemory_BRAM.v`) to store chunk ciphertext before authentication, eliminating external DDR release pre-verification.
 
-Refactoring the protected buffer memory to a synchronous simple-dual-port BRAM primitive dramatically reduced programmable-logic utilization:
+The paired Vivado utilization reports show the protected-buffer wrapper falling from 58,392 LUTs and 33,421 FFs to 371 LUTs and 238 FFs, while RAMB36 usage rises from 0 to 2. The optimized memory child uses 86 LUTs and 2 RAMB36 blocks. The full-design totals in this report pair are also recorded below; they describe the reports and should not be read as attributing every design-level change solely to the buffer refactor.
 
-| Metric | LUT baseline | BRAM optimized |
+| Metric | Pre-BRAM report | BRAM-optimized report |
 |---|---:|---:|
-| Protected memory LUTs | 58,392 | 86 |
-| RAMB36 | 0 | 2 |
-| RAMB18 | 0 | 0 |
-| WNS | +0.313 ns | +0.975 ns |
-| WHS | +0.013 ns | +0.002 ns |
-| Total power | 4.000 W | 3.602 W |
-| Dynamic power | 3.305 W | 2.909 W |
-| Static power | 0.696 W | 0.693 W |
+| Protected-buffer wrapper LUTs | 58,392 | 371 |
+| Protected-buffer wrapper FFs | 33,421 | 238 |
+| Protected-buffer wrapper RAMB36 | 0 | 2 |
+| Protected-buffer wrapper RAMB18 | 0 | 0 |
+| Optimized memory-child LUTs | — | 86 |
+| Full-design LUTs | 78,133 | 20,112 |
+| Full-design FFs | 46,149 | 12,966 |
+| Full-design RAMB36 | 4 | 6 |
+| Full-design RAMB18 | 2 | 2 |
+
+Only utilization reports for this before-and-after pair are included in the comparison evidence. Paired WNS/WHS and power values are omitted because the corresponding raw reports are not included there; no timing or power improvement is claimed by this table.
 
 Physical ZCU104 board validation verified complete exact recovery and tamper rejection across chunked workloads:
 - **17×19 payload**: 1/1 chunk PASS

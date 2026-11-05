@@ -47,8 +47,10 @@ PASS: CHK3 PROTOCOL OFFLINE MILESTONE
 Run the protected-chunk host client against the ZCU104 hardware running `main_gcm_dma_protected_chunk.c`:
 
 ```powershell
-py host/gcm/protected_chunk/run_gcm_protected_chunk.py "C:/path/to/image.png" COM11 --size 256x256 --sequence 101 --output protected_chunk_256_run1
+py host/gcm/protected_chunk/run_gcm_protected_chunk.py "C:/path/to/image.png" COMx --size 256x256 --sequence 101 --output protected_chunk_256_run1
 ```
+
+Replace `COMx` with the serial port assigned to the board on your computer.
 
 Expected result:
 

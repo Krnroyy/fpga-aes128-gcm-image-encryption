@@ -10,6 +10,8 @@
 
 Use a short Windows path without spaces, for example `C:\ZCU104_AES_GCM`.
 
+Replace the example serial-port name in commands below with the COM port assigned to the board on your PC. Find it in Device Manager under **Ports (COM & LPT)**; COM numbers are machine-specific.
+
 ## 1. Optional RTL validation
 
 Open Vivado 2026.1 and use **Window > Tcl Console**.
@@ -99,10 +101,10 @@ After every power cycle, the volatile PL bitstream and bare-metal application mu
 ```powershell
 cd C:\ZCU104_AES_GCM\host\gcm
 py -m pip install -r requirements.txt
-py send_receive_gcm_image.py "C:\path\to\image.png" COM11 --output gcm_output_run1
+py send_receive_gcm_image.py "C:\path\to\image.png" COMx --output gcm_output_run1
 ```
 
-Keep PowerShell waiting and launch the single-image Vitis application. If COM11 is wrong, terminate the running Vitis session and retry with COM13.
+Replace `COMx` with the board's actual port, keep PowerShell waiting, and launch the single-image Vitis application.
 
 Required final line: `OVERALL: PASS`.
 
@@ -110,7 +112,7 @@ Required final line: `OVERALL: PASS`.
 
 ```powershell
 cd C:\ZCU104_AES_GCM\host\gcm
-py benchmark_gcm_images.py "C:\path\to\dataset" COM11 --limit 10 --output gcm_benchmark_output_run1
+py benchmark_gcm_images.py "C:\path\to\dataset" COMx --limit 10 --output gcm_benchmark_output_run1
 ```
 
 Launch the batch Vitis application once. The default experiment sends the selected dataset images and repeats the first image with a new IV.
@@ -138,7 +140,7 @@ py host/gcm/protected_chunk/test_chunk_protocol_offline.py
 Run the protected-chunk board execution script using `host/gcm/protected_chunk/run_gcm_protected_chunk.py`:
 
 ```powershell
-py host/gcm/protected_chunk/run_gcm_protected_chunk.py "C:/path/to/image.png" COM11 --size 256x256 --sequence 101 --output protected_chunk_256_run1
+py host/gcm/protected_chunk/run_gcm_protected_chunk.py "C:/path/to/image.png" COMx --size 256x256 --sequence 101 --output protected_chunk_256_run1
 ```
 
 Launch the `software/vitis_gcm/protected_chunk/` application on the board.
