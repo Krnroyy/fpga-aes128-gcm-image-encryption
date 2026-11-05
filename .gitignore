@@ -1,4 +1,4 @@
-﻿# Vivado generated files and directories
+# Vivado generated files and directories
 .Xil/
 *.cache/
 *.gen/
@@ -53,3 +53,5 @@ datasets/
 .DS_Store
 Thumbs.db
 .vscode/
+/hardware/gcm_protected_chunk/sim/vivado_protected_chunk_sim/
+/hardware/gcm_protected_chunk/scripts/protected_chunk_reports/
