@@ -65,7 +65,7 @@ The prototype uses a demonstration AES key, volatile session freshness state, RG
 
 ### Vivado utilization
 
-The BRAM optimization report reduced the protected memory implementation from 58,392 LUTs and 0 RAMB36 blocks to 86 LUTs and 2 RAMB36 blocks. In the final hierarchical report, the complete buffer wrapper uses 371 LUTs and 238 FFs; the full design uses 20,112 LUTs.
+The before-and-after Vivado utilization reports show the protected buffer wrapper (`protected_chunk_buffer_0`) decreasing from 58,392 LUTs and 33,421 FFs, with 0 RAMB36 blocks, to 371 LUTs and 238 FFs, with 2 RAMB36 blocks. Across the full design, LUT use decreased from 78,133 to 20,112, and FF use decreased from 46,149 to 12,966. In the optimized hierarchy, the memory child uses 86 LUTs and 2 RAMB36 blocks; the rest of the wrapper uses 285 LUTs.
 
 The memory SmartConnect (`system_mem_smc`) uses 2,059 LUTs: 1,518 logic LUTs, 532 LUTRAMs, and 9 SRLs. This is its utilization in the final design; the report does not establish that it represents a 2,059-LUT increase caused by the BRAM optimization.
 
