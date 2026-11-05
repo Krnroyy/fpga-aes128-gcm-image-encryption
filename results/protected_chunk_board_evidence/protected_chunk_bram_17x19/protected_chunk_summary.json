@@ -1,0 +1,46 @@
+{
+  "protocol": "CHK3",
+  "image_size": [
+    17,
+    19
+  ],
+  "image_bytes": 969,
+  "image_sequence": 100,
+  "session_nonce_hex": "4B605A6A1F4523A8",
+  "chunk_capacity_bytes": 4096,
+  "chunk_count": 1,
+  "input_sha256": "a2e3ae56758e1654f968453651803e7f4a20509179f1910514569d922e30a2b0",
+  "ciphertext_sha256": "ad94b948b227ac5980a85820fcfb7968803e933e4242b321b1b21ca84f36f8d6",
+  "recovered_sha256": "a2e3ae56758e1654f968453651803e7f4a20509179f1910514569d922e30a2b0",
+  "exact_full_image_recovery": true,
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "chunk_bytes": 969,
+      "final": true,
+      "iv_hex": "4B605A6A1F4523A800000000",
+      "aad_hex": "030103010011001303C9000000010064",
+      "tag_hex": "7AFF4945A819C319F85E39CD79889945",
+      "ciphertext_sha256": "ad94b948b227ac5980a85820fcfb7968803e933e4242b321b1b21ca84f36f8d6",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 28220,
+        "release_ns": 29250,
+        "combined_ns": 57470
+      },
+      "overall_pass": true
+    }
+  ],
+  "overall_pass": true
+}

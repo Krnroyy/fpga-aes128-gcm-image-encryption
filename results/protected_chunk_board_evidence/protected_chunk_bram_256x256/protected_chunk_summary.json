@@ -1,0 +1,1315 @@
+{
+  "protocol": "CHK3",
+  "image_size": [
+    256,
+    256
+  ],
+  "image_bytes": 196608,
+  "image_sequence": 200,
+  "session_nonce_hex": "46802628C7534254",
+  "chunk_capacity_bytes": 4096,
+  "chunk_count": 48,
+  "input_sha256": "f926cae6cf32d3f57749fbe8e6ef33068f2c531334fe3937744b3eb9d47cd7ed",
+  "ciphertext_sha256": "8382c523612a64a04f4b6516628c999336642d765bcf754b88693660b25eacc2",
+  "recovered_sha256": "f926cae6cf32d3f57749fbe8e6ef33068f2c531334fe3937744b3eb9d47cd7ed",
+  "exact_full_image_recovery": true,
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000000",
+      "aad_hex": "030103000100010010000000003000C8",
+      "tag_hex": "1F2167C01F761CB23409BE3A4D0751D8",
+      "ciphertext_sha256": "bf963e4fe267092847d64557cfb62e5ac21ed1ca33647236a2a03c476ca47c48",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77670,
+        "release_ns": 77090,
+        "combined_ns": 154760
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 1,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000001",
+      "aad_hex": "030103000100010010000001003000C8",
+      "tag_hex": "97627AF996A61AE4C180E3D0D22EA9F8",
+      "ciphertext_sha256": "d2c1304e3b22caccbbb0c1b912277c44a9b180c8a89182e6de03b92ac12f56c4",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77030,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 2,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000002",
+      "aad_hex": "030103000100010010000002003000C8",
+      "tag_hex": "91A0331AF58CA3DD02FB6AA19283EB7F",
+      "ciphertext_sha256": "7b36e35aecd4550a5744dd6a1ecd4021432aaa432c3afe45896b222986dcdd8a",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77830,
+        "release_ns": 77000,
+        "combined_ns": 154830
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 3,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000003",
+      "aad_hex": "030103000100010010000003003000C8",
+      "tag_hex": "C2D9C6E4AD2312493B71E391B46D5C3C",
+      "ciphertext_sha256": "240911c2f23ecd8bc06e16476b17a9df11244c16e6cbc7f8dd3113e2b192e01e",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77480,
+        "release_ns": 77030,
+        "combined_ns": 154510
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 4,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000004",
+      "aad_hex": "030103000100010010000004003000C8",
+      "tag_hex": "2E7C755C285331EBE5F222E96C954087",
+      "ciphertext_sha256": "21aff3057f149982b52650154b207b97941d0055caea6c26252698d5fee4ab5e",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77030,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 5,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000005",
+      "aad_hex": "030103000100010010000005003000C8",
+      "tag_hex": "D3D2AC9A0F3D14D31524E7155856A48A",
+      "ciphertext_sha256": "4e1bef55e541fa652f5a7a78c73e7cdccf3c1c7a5434b0420dd60d64e73e33ec",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77450,
+        "release_ns": 77030,
+        "combined_ns": 154480
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 6,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000006",
+      "aad_hex": "030103000100010010000006003000C8",
+      "tag_hex": "377C855D10D1DF34AD19D32BC1B4AB98",
+      "ciphertext_sha256": "dae922f580213b53d624320f5fa9a2086a3b909685a2ab832ccc68127b8081fd",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77480,
+        "release_ns": 77020,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 7,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000007",
+      "aad_hex": "030103000100010010000007003000C8",
+      "tag_hex": "DD31882759886777664BFDA19FDB90B0",
+      "ciphertext_sha256": "2b5753c365474b60e47381822f5de9dde92af994ee7bd0740a41c93dc7d0e091",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77800,
+        "release_ns": 77030,
+        "combined_ns": 154830
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 8,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000008",
+      "aad_hex": "030103000100010010000008003000C8",
+      "tag_hex": "78DA120D266F1AA43AD83A293F634C87",
+      "ciphertext_sha256": "3eb6dc44ac54d6c62742919cb7bceeede081eabe3810f27ee922df83d54e0776",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77040,
+        "combined_ns": 154510
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 9,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000009",
+      "aad_hex": "030103000100010010000009003000C8",
+      "tag_hex": "7CB1D8FA3A12AB7E8B214226F9272E59",
+      "ciphertext_sha256": "7b6f5a709e0af81759b80b030dcaa7b93b304adadb0894ff9621e465c422e434",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77030,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 10,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000000A",
+      "aad_hex": "03010300010001001000000A003000C8",
+      "tag_hex": "EA7AB54C33DB49FBCCED0CE81E852096",
+      "ciphertext_sha256": "73d8ec30e7056fbc8b78d4f8723ccf9f9c2a4efbb0f590218ed5315d00536803",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77040,
+        "combined_ns": 154510
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 11,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000000B",
+      "aad_hex": "03010300010001001000000B003000C8",
+      "tag_hex": "930C48DBBF96B6797AD3710A0FF1B2BC",
+      "ciphertext_sha256": "e6e3b8e0413c8589bc0aacfa98b590ebd5cddf276be06185aea5f99c50af2e58",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77480,
+        "release_ns": 77020,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 12,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000000C",
+      "aad_hex": "03010300010001001000000C003000C8",
+      "tag_hex": "95B4CAF7034D299F066A9CC69CA329CD",
+      "ciphertext_sha256": "833f694f5168d8f6a317dff2cfb382fc8c1b5c2d98577cadd1c95d54fc3646ad",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77480,
+        "release_ns": 77040,
+        "combined_ns": 154520
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 13,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000000D",
+      "aad_hex": "03010300010001001000000D003000C8",
+      "tag_hex": "9CD5134B43D25D2A138EDED6A68C7802",
+      "ciphertext_sha256": "9a61245b9e2c0e0ff92cda78dc55771c81f37c18f9050615656795c278351222",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77450,
+        "release_ns": 77040,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 14,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000000E",
+      "aad_hex": "03010300010001001000000E003000C8",
+      "tag_hex": "2376759310E3B77B466F8668C2130C5A",
+      "ciphertext_sha256": "87b07e7ac5531443981c79fcd56897d03e2585f339c5cb14fa9c2812bdd7ddf7",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77480,
+        "release_ns": 77010,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 15,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000000F",
+      "aad_hex": "03010300010001001000000F003000C8",
+      "tag_hex": "912B5197B161D3EE1D33E337FF5FF43F",
+      "ciphertext_sha256": "686a49b3ef2f873bf335a640e6c37b0c39ddc7c90b7821c5a4c0d695eb6aaf7a",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77040,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 16,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000010",
+      "aad_hex": "030103000100010010000010003000C8",
+      "tag_hex": "A51697247845CAFA9FED517412D653B5",
+      "ciphertext_sha256": "c0875debe56ad2c8ae7627431456befbba9328e311039bac855569ddae3abec4",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77800,
+        "release_ns": 77010,
+        "combined_ns": 154810
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 17,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000011",
+      "aad_hex": "030103000100010010000011003000C8",
+      "tag_hex": "3E8329ACA67EB9E740728D90F9887A47",
+      "ciphertext_sha256": "d7d4640c57873caf754bc98076a0e13686513fc05a773368434ba4c10fa7f750",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77030,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 18,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000012",
+      "aad_hex": "030103000100010010000012003000C8",
+      "tag_hex": "94DAD4082B378C09F5C04A6F3BE27EE8",
+      "ciphertext_sha256": "bf517e141e114308876830e2ee89dcc3e987d64101d9bc2990263fac359ff961",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77030,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 19,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000013",
+      "aad_hex": "030103000100010010000013003000C8",
+      "tag_hex": "9882FB8A2FBA895599BC2D419E8F9AD5",
+      "ciphertext_sha256": "8c3efaf6bf9db372700a87ff9120810828469b31fc6b8596e3594e20b8e300fe",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77030,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 20,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000014",
+      "aad_hex": "030103000100010010000014003000C8",
+      "tag_hex": "6598F820EDA43D9FA9E5AC200007C357",
+      "ciphertext_sha256": "64bf98f7bb6df8347f028a8b1cca201004168a707db9870955e2a417a4b2415c",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77040,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 21,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000015",
+      "aad_hex": "030103000100010010000015003000C8",
+      "tag_hex": "4D11DBEC377D952A9BFD0E1C6891B211",
+      "ciphertext_sha256": "e167a06fa51565fc99adea670755b9b9782fb55eb2b88bd33bbbffd5c6614b0c",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77040,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 22,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000016",
+      "aad_hex": "030103000100010010000016003000C8",
+      "tag_hex": "25BCF89645CBCC4C2D5ED429244B7DBD",
+      "ciphertext_sha256": "a73aa60f9148e154d8c068cd1183b5c81ab404b23a3cce0752d50fc0ecd6f0a3",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77020,
+        "combined_ns": 154480
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 23,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000017",
+      "aad_hex": "030103000100010010000017003000C8",
+      "tag_hex": "066844891F2699B6C543E37E6D000D05",
+      "ciphertext_sha256": "06f20df62df63bd71271e3f98b946fd9e444a0497e4b89dd434c3d1eb41f3b9b",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77480,
+        "release_ns": 77050,
+        "combined_ns": 154530
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 24,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000018",
+      "aad_hex": "030103000100010010000018003000C8",
+      "tag_hex": "B282FE3F7AF3665266AA1E8EC5C696CB",
+      "ciphertext_sha256": "722d81d635d6bf47cc32733012c5f4b7cf7f6ccbf652723ac251681b1429ea0e",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77040,
+        "combined_ns": 154510
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 25,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000019",
+      "aad_hex": "030103000100010010000019003000C8",
+      "tag_hex": "8BBCD038D3F12CA13959420FF33F50EB",
+      "ciphertext_sha256": "3a55b76bb362f51a3150ca326fceaa2477c0b30ea715014f05769fca05df034d",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77030,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 26,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000001A",
+      "aad_hex": "03010300010001001000001A003000C8",
+      "tag_hex": "B4ACC7EAA768655E39F307CC84F38BD7",
+      "ciphertext_sha256": "b2e1f214016035e9983328f8c6451b80ec19cdc8e8505238d1989043cd2de401",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77030,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 27,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000001B",
+      "aad_hex": "03010300010001001000001B003000C8",
+      "tag_hex": "EC8D5A311926613424F682F3EEECFC7D",
+      "ciphertext_sha256": "3876b3e75fceb178cd900cb59511aa64aa958454846d4ce258161596d36928ce",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77040,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 28,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000001C",
+      "aad_hex": "03010300010001001000001C003000C8",
+      "tag_hex": "14D2AF0A34941C5AC0CF4C59FC08F9CA",
+      "ciphertext_sha256": "c144bc8c47c8dbce0cce33cf890d59941681b3f265cf2468ca3a29f97410aa08",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77050,
+        "combined_ns": 154520
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 29,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000001D",
+      "aad_hex": "03010300010001001000001D003000C8",
+      "tag_hex": "1F68BEDE61EB8D561876BD243650B25A",
+      "ciphertext_sha256": "c73549c1b331849ac61907f5aa8009aac04f0a5d03aa3eb2741bb68e1511f66f",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77040,
+        "combined_ns": 154510
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 30,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000001E",
+      "aad_hex": "03010300010001001000001E003000C8",
+      "tag_hex": "8037E179233BD00771725215EB5F6ED9",
+      "ciphertext_sha256": "f9b56f89bafbf68c208543c903c0cf06801ebca130c47456176c22e147512190",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77030,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 31,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000001F",
+      "aad_hex": "03010300010001001000001F003000C8",
+      "tag_hex": "BF05F55B854B4582C1423B4C12A9533A",
+      "ciphertext_sha256": "c71785445c7e59a1f94e3fd1ee20cd0b2e0e5d5b7343f262df1326ecb3acf50b",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77030,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 32,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000020",
+      "aad_hex": "030103000100010010000020003000C8",
+      "tag_hex": "254D6A0B9ACC2164E1FFCA88E3D03595",
+      "ciphertext_sha256": "3e0d2d1f87b11bb24209a506ba2dce47cd064133b291ebe99505141fcc60bfd1",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77040,
+        "combined_ns": 154510
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 33,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000021",
+      "aad_hex": "030103000100010010000021003000C8",
+      "tag_hex": "379DA1B95E4060E965B7B02B01945348",
+      "ciphertext_sha256": "528f5f937780e6432f81f4fa6cd1172d42552265782c8baf2417939d8a4d7474",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77480,
+        "release_ns": 77030,
+        "combined_ns": 154510
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 34,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000022",
+      "aad_hex": "030103000100010010000022003000C8",
+      "tag_hex": "634E2F23E064C0D6682475CBBBE6159C",
+      "ciphertext_sha256": "cb59fde4f3b1205273f1de56f5fe9596e194f06a0976e19667680bf3f0ac5725",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77030,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 35,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000023",
+      "aad_hex": "030103000100010010000023003000C8",
+      "tag_hex": "690D707E13D735EE0F3750F9FF9DFD3C",
+      "ciphertext_sha256": "377bc0d2c51297d7084def653e6908fd145dfeeefef2f5b0598a6560a4041c58",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77030,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 36,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000024",
+      "aad_hex": "030103000100010010000024003000C8",
+      "tag_hex": "6E199DD4B98B3B307FBC374B7A9AED40",
+      "ciphertext_sha256": "83165ba77a195af50afe4784db3d90c65f1dc4529510baf715e964ffa70034b0",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77030,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 37,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000025",
+      "aad_hex": "030103000100010010000025003000C8",
+      "tag_hex": "48B8D2EC47213AE936635C77750A0A5F",
+      "ciphertext_sha256": "d9209f4cc496556714477ed1a61f08971674938c2ba640f9d89ce32333d40ca1",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77020,
+        "combined_ns": 154480
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 38,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000026",
+      "aad_hex": "030103000100010010000026003000C8",
+      "tag_hex": "20F59BF327884C6430B18EF153E25185",
+      "ciphertext_sha256": "c61075d7a7bacf36068da03be5636003087437b62138ca65cb107e1e26b90596",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77040,
+        "combined_ns": 154510
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 39,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000027",
+      "aad_hex": "030103000100010010000027003000C8",
+      "tag_hex": "87D08C24861306A06677DE56C78031D2",
+      "ciphertext_sha256": "4fa9f8d6b597f514bca922ca9add1ad862773c060b54de23fd02f0f3f57393e4",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77030,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 40,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000028",
+      "aad_hex": "030103000100010010000028003000C8",
+      "tag_hex": "00A16E8DA1DC1217B6A6AE96E80FA372",
+      "ciphertext_sha256": "6324165246d9d7712fd8cd11e916c352341423d4a02826671a079af1797f0191",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77450,
+        "release_ns": 77040,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 41,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C753425400000029",
+      "aad_hex": "030103000100010010000029003000C8",
+      "tag_hex": "5F2AF161DD65F3AEDC434D9D0337F00A",
+      "ciphertext_sha256": "6c2bf7d6f39490ec9bfa162ae23f6729db1f0cc97836ce37b8eada3253193fa7",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77810,
+        "release_ns": 77010,
+        "combined_ns": 154820
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 42,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000002A",
+      "aad_hex": "03010300010001001000002A003000C8",
+      "tag_hex": "77BADA2E55878E643A021511536A1D37",
+      "ciphertext_sha256": "7cbbc8df7b6708abcf875962787cab5fb1642e9f3b15c171524582d9eb5e8439",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77030,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 43,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000002B",
+      "aad_hex": "03010300010001001000002B003000C8",
+      "tag_hex": "0367954EAA6E0594503CE50849CAD637",
+      "ciphertext_sha256": "f105f9f2c8c50fd0a4327c5734db074b1811bcb81c28313f576add975338454f",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77040,
+        "combined_ns": 154510
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 44,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000002C",
+      "aad_hex": "03010300010001001000002C003000C8",
+      "tag_hex": "68C614C9D411F60C392EB0DB4792EBAB",
+      "ciphertext_sha256": "b1cf26349db6f33e78015e291a3cd00ddbd9387b59031418df4a7a574c610326",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77480,
+        "release_ns": 77020,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 45,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000002D",
+      "aad_hex": "03010300010001001000002D003000C8",
+      "tag_hex": "05E7DADA187382C943EA213C86509BA9",
+      "ciphertext_sha256": "2760fc44b8487d12072aa8a5876dc99aa88cffb6439f24896e75dbc8c4cbeafe",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77470,
+        "release_ns": 77010,
+        "combined_ns": 154480
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 46,
+      "chunk_bytes": 4096,
+      "final": false,
+      "iv_hex": "46802628C75342540000002E",
+      "aad_hex": "03010300010001001000002E003000C8",
+      "tag_hex": "C026CC175A969B36A2279D7F6DAD804E",
+      "ciphertext_sha256": "ce5bcd416dfb0c1360a39b6f02afc7f4c6e855cd0fa12ea31211f6d6a2c2f787",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77480,
+        "release_ns": 77020,
+        "combined_ns": 154500
+      },
+      "overall_pass": true
+    },
+    {
+      "chunk_index": 47,
+      "chunk_bytes": 4096,
+      "final": true,
+      "iv_hex": "46802628C75342540000002F",
+      "aad_hex": "03010301010001001000002F003000C8",
+      "tag_hex": "CA395EC5467651C944F46002BFC846E6",
+      "ciphertext_sha256": "b8aa80e15c21682ba62b9f5c3078e046c849f34059e75d6c4656ac06f843e733",
+      "checks": {
+        "ciphertext_matches_python": true,
+        "tag_matches_python": true,
+        "exact_recovery": true,
+        "rejected_output_zeroized": true,
+        "protected_buffer_locked_between_passes": true,
+        "release_replayed_without_recapture": true,
+        "ciphertext_tamper_rejected_before_decrypt": true,
+        "aad_tamper_rejected_before_decrypt": true,
+        "protected_tamper_buffer_zeroized": true,
+        "protected_aad_buffer_zeroized": true
+      },
+      "timing": {
+        "auth_only_ns": 77460,
+        "release_ns": 77030,
+        "combined_ns": 154490
+      },
+      "overall_pass": true
+    }
+  ],
+  "overall_pass": true
+}

@@ -1,4 +1,4 @@
-﻿# AES-GCM protected-chunk milestone
+# AES-GCM protected-chunk milestone
 
 The protected-chunk milestone removes the external-memory time-of-check/time-of-use assumption from the two-pass AES-GCM release path. Each CHK3 transaction is captured once into a 4096-byte on-chip buffer. Capture then locks; the same bytes are replayed for authentication-only mode and, only after a valid tag, replayed again for decryption and plaintext release.
 
@@ -62,3 +62,13 @@ Ciphertext tampering and AAD tampering were rejected before plaintext release, a
 The routed report met timing at 75.002 MHz, with WNS +0.975 ns and WHS +0.002 ns. Power values are vectorless Vivado estimates with medium confidence, not physical board rail measurements.
 
 The prototype uses a demonstration AES key, volatile session freshness state, RGB888 input only, and a 4096-byte chunk limit. It does not claim resistance to side-channel or fault-injection attacks and is not a clinical product.
+
+### Vivado utilization
+
+The BRAM optimization report reduced the protected memory implementation from 58,392 LUTs and 0 RAMB36 blocks to 86 LUTs and 2 RAMB36 blocks. In the final hierarchical report, the complete buffer wrapper uses 371 LUTs and 238 FFs; the full design uses 20,112 LUTs.
+
+The memory SmartConnect (`system_mem_smc`) uses 2,059 LUTs: 1,518 logic LUTs, 532 LUTRAMs, and 9 SRLs. This is its utilization in the final design; the report does not establish that it represents a 2,059-LUT increase caused by the BRAM optimization.
+
+## Physical board evidence files
+
+Board-run summaries and UART transcripts are stored under `results/protected_chunk_board_evidence/`. The accompanying `SHA256SUMS.txt` records their SHA-256 hashes. Per-chunk binary dumps are excluded from the repository.

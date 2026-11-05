@@ -1,4 +1,4 @@
-﻿# Verified Experimental Results
+# Verified Experimental Results
 
 All values in this document come from the raw files under `results/`. Run `py tools/analyze_results.py` to recreate the comparison CSV, evidence hashes and figures.
 
@@ -121,7 +121,7 @@ Physical ZCU104 board validation verified complete exact recovery and tamper rej
 - **256×256 payload**: 48/48 chunks PASS
 - **512×512 payload**: 192/192 chunks PASS
 
-Physical raw evidence remains local and is not committed in this documentation update. Measured validation values are transcribed into the documentation and must not be altered. See [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md) for full protocol and implementation documentation.
+Compact physical board evidence is included under `results/protected_chunk_board_evidence/`: each run has a JSON summary and UART transcript, with SHA-256 hashes in `SHA256SUMS.txt`. Measured validation values are transcribed into the documentation and must not be altered. See [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md) for full protocol and implementation documentation.
 
 ## 8. Evidence locations
 
