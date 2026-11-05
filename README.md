@@ -1,4 +1,4 @@
-﻿# FPGA AES-128-GCM Authenticated Image Security on ZCU104
+﻿# ZCU104 FPGA AES-128-GCM Image Protection
 
 Hardware/software co-design for authenticated image encryption on the AMD/Xilinx ZCU104 Zynq UltraScale+ MPSoC. A Cortex-A53 application transfers 256 × 256 RGB888 images through AXI DMA to a custom 128-bit AES-GCM AXI4-Stream accelerator in programmable logic.
 
