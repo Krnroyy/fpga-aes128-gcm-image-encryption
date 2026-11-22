@@ -116,19 +116,37 @@ For full architectural, protocol, and resource details, see [docs/PROTECTED_CHUN
 
 ## Visual Demonstration — Original, Encrypted and Recovered Images
 
-The following outputs were captured from the ZCU104 protected-chunk FPGA implementation. The recovered images demonstrate reconstruction after authenticated decryption.
+The following outputs were captured from the ZCU104 protected-chunk FPGA implementation. The recovered images are byte-for-byte identical to their corresponding input PNG files, as confirmed by matching SHA-256 hashes.
 
 ### 256 × 256 RGB Image
 
-| Original Input | Encrypted Visualization | Recovered Output |
-|---|---|---|
-| ![Original 256x256](results/visual_demo/256x256/input.png) | ![Encrypted 256x256](results/visual_demo/256x256/encrypted.png) | ![Recovered 256x256](results/visual_demo/256x256/recovered.png) |
+<table>
+<tr>
+<th align="center">Original Input</th>
+<th align="center">Encrypted Visualization</th>
+<th align="center">Recovered Output</th>
+</tr>
+<tr>
+<td align="center"><img src="results/visual_demo/256x256/input.png" width="190" alt="Original 256x256 image"></td>
+<td align="center"><img src="results/visual_demo/256x256/encrypted.png" width="190" alt="Encrypted 256x256 visualization"></td>
+<td align="center"><img src="results/visual_demo/256x256/recovered.png" width="190" alt="Recovered 256x256 image"></td>
+</tr>
+</table>
 
 ### 512 × 512 RGB Image
 
-| Original Input | Encrypted Visualization | Recovered Output |
-|---|---|---|
-| ![Original 512x512](results/visual_demo/512x512/input.png) | ![Encrypted 512x512](results/visual_demo/512x512/encrypted.png) | ![Recovered 512x512](results/visual_demo/512x512/recovered.png) |
+<table>
+<tr>
+<th align="center">Original Input</th>
+<th align="center">Encrypted Visualization</th>
+<th align="center">Recovered Output</th>
+</tr>
+<tr>
+<td align="center"><img src="results/visual_demo/512x512/input.png" width="190" alt="Original 512x512 image"></td>
+<td align="center"><img src="results/visual_demo/512x512/encrypted.png" width="190" alt="Encrypted 512x512 visualization"></td>
+<td align="center"><img src="results/visual_demo/512x512/recovered.png" width="190" alt="Recovered 512x512 image"></td>
+</tr>
+</table>
 
 ### Additional Test — 17 × 19
 
@@ -138,7 +156,7 @@ The following outputs were captured from the ZCU104 protected-chunk FPGA impleme
 
 ### Raw Evidence
 
-Each test directory also contains the raw ciphertext, recovered plaintext, protected-chunk JSON summary and UART execution transcript.
+Each test directory also contains raw ciphertext, recovered plaintext, the protected-chunk JSON summary and UART execution transcript.
 
 See [all visual demonstration evidence](results/visual_demo/).
 
@@ -192,5 +210,6 @@ This repository is a verified engineering research prototype, not a clinical sec
 ## License
 
 See [LICENSE](LICENSE).
+
 
 
