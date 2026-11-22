@@ -112,7 +112,7 @@ The protected-chunk co-design milestone eliminates external DDR release before a
 
 The before-and-after Vivado utilization reports show the protected buffer wrapper decreasing from **58,392 to 371 LUTs**, from **33,421 to 238 FFs**, and from **0 to 2 RAMB36 blocks**. In the optimized hierarchy, the memory child uses 86 LUTs and 2 RAMB36 blocks. The full-design totals in that report pair are 78,133 and 20,112 LUTs; these are report totals, not a claim that every change in the design came from the buffer refactor. Physical ZCU104 testing passed at 17×19 (1/1), 256×256 (48/48), and 512×512 (192/192) chunks. The paired evidence and scope notes are in [the BRAM comparison folder](results/protected_chunk_bram_comparison/).
 
-For full architectural, protocol, and resource details, see [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md).
+The diagram above shows the baseline `gcm_dma` flow. The separate locked-BRAM protected-chunk flow is documented in [the detailed architecture](docs/ARCHITECTURE.md), including its authentication-before-release sequence. For protocol details, see [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md).
 
 ### Final protected-chunk implementation PPA
 
@@ -212,6 +212,9 @@ Follow [BUILD_AND_RUN.md](BUILD_AND_RUN.md). The short sequence is:
 - [Build and run guide](BUILD_AND_RUN.md)
 - [AES-GCM protected-chunk milestone](docs/PROTECTED_CHUNK.md)
 - [Security model and limitations](docs/SECURITY_MODEL.md)
+- [System architecture](docs/ARCHITECTURE.md)
+- [Experimental methodology](docs/EXPERIMENT_METHODOLOGY.md)
+- [Results and discussion](docs/RESULTS_DISCUSSION.md)
 - [Paper experiment roadmap](docs/PAPER_EXPERIMENT_PLAN.md)
 - [Machine-readable verified summary](results/comparison/verified_summary.json)
 
@@ -232,4 +235,3 @@ This repository is a verified engineering research prototype, not a clinical sec
 ## License
 
 See [LICENSE](LICENSE).
-
