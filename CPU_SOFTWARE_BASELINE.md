@@ -1,7 +1,7 @@
-﻿# Cortex-A53 Software AES-128-GCM Baseline
+# Cortex-A53 Software AES-128-GCM Baseline
 
 ## 1. Objective
-Measure the performance of software-based AES-128-GCM encryption and decryption running on the ZCU104 Cortex-A53 processor. This provides a CPU software baseline for comparison with the FPGA-accelerated implementation.
+Measure software AES-128-GCM encryption and decryption on the ZCU104 Cortex-A53. This benchmark provides a software reference measurement; it is not a controlled performance comparison against the FPGA implementation because the payload sizes and timing boundaries differ.
 
 ## 2. Test Configuration
 

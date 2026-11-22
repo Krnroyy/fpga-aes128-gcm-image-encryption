@@ -1,8 +1,8 @@
-﻿# ZCU104 FPGA AES-128-GCM Image Protection
+# ZCU104 FPGA AES-128-GCM Image Protection
 
 Hardware/software co-design for authenticated image encryption on the AMD/Xilinx ZCU104 Zynq UltraScale+ MPSoC. A Cortex-A53 application transfers 256 × 256 RGB888 images through AXI DMA to a custom 128-bit AES-GCM AXI4-Stream accelerator in programmable logic.
 
-The final implementation provides confidentiality, a 128-bit authentication tag, ciphertext-tamper detection, and controlled plaintext release. FPGA ciphertext and tags were independently checked against Python's `AESGCM` implementation.
+The repository contains two related AES-GCM data paths, and their release guarantees are different. The baseline `gcm_dma` path verifies the authentication result before firmware transmits plaintext, then zeroizes the reserved DDR output buffer on rejection; unauthenticated decrypted bytes can temporarily occupy that DDR buffer. The protected-chunk path captures ciphertext into locked on-chip BRAM, authenticates it with output DMA disarmed, and only then replays it for plaintext release. FPGA ciphertext and tags were independently checked against Python's `AESGCM` implementation.
 
 ## Verified outcome
 
@@ -113,6 +113,28 @@ The protected-chunk co-design milestone eliminates external DDR release before a
 The before-and-after Vivado utilization reports show the protected buffer wrapper decreasing from **58,392 to 371 LUTs**, from **33,421 to 238 FFs**, and from **0 to 2 RAMB36 blocks**. In the optimized hierarchy, the memory child uses 86 LUTs and 2 RAMB36 blocks. The full-design totals in that report pair are 78,133 and 20,112 LUTs; these are report totals, not a claim that every change in the design came from the buffer refactor. Physical ZCU104 testing passed at 17×19 (1/1), 256×256 (48/48), and 512×512 (192/192) chunks. The paired evidence and scope notes are in [the BRAM comparison folder](results/protected_chunk_bram_comparison/).
 
 For full architectural, protocol, and resource details, see [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md).
+
+### Final protected-chunk implementation PPA
+
+The final protected-chunk implementation completed implementation and routing at 75.002 MHz.
+
+| Metric | Final result |
+|---|---:|
+| CLB LUTs | 20,112 (8.73%) |
+| Logic LUTs | 19,417 (8.43%) |
+| LUTRAM | 556 (0.55%) |
+| Flip-flops | 12,966 (2.81%) |
+| RAMB36 / RAMB18 | 6 / 2 |
+| URAM / DSP | 0 / 0 |
+| WNS / TNS | +0.975 ns / 0 ns |
+| WHS / THS | +0.002 ns / 0 ns |
+| WPWS / TPWS | +5.166 ns / 0 ns |
+| Timing endpoints | 42,054; zero setup/hold failing endpoints |
+| Fully routed nets / routing errors | 24,970 / 0 |
+
+The critical path runs from `key_reg3_reg[13]/C` to `ciphertext_reg[124]/D`, with a reported path delay of 12.122 ns: 3.772 ns logic (31.117%) and 8.350 ns routing (68.883%). The path contains 45 logic levels.
+
+Vivado reports 3.602 W total estimated power (2.909 W dynamic, 0.693 W static; medium confidence). This is a vectorless estimate without an activity file, includes an estimated 2.680 W PS8 contribution, and is not a physical board-rail measurement. See [RESULTS.md](RESULTS.md) for the measurement scope and details.
 
 ## Visual Demonstration — Original, Encrypted and Recovered Images
 

@@ -147,7 +147,34 @@ Physical ZCU104 board validation verified complete exact recovery and tamper rej
 
 Compact physical board evidence is included under `results/protected_chunk_board_evidence/`: each run has a JSON summary and UART transcript, with SHA-256 hashes in `SHA256SUMS.txt`. Measured validation values are transcribed into the documentation and must not be altered. See [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md) for full protocol and implementation documentation.
 
-## 9. Evidence locations
+## 9. Final protected-chunk implementation PPA
+
+The following values describe the final protected-chunk implementation report, not the separate CTR-DMA versus baseline GCM-DMA comparison in Section 4.
+
+| Metric | Final result |
+|---|---:|
+| Total CLB LUTs | 20,112 (8.73%) |
+| Logic LUTs | 19,417 (8.43%) |
+| LUTRAM | 556 (0.55%) |
+| Flip-flops | 12,966 (2.81%) |
+| RAMB36 | 6 |
+| RAMB18 | 2 |
+| URAM | 0 |
+| DSP | 0 |
+| WNS / TNS | +0.975 ns / 0 ns |
+| WHS / THS | +0.002 ns / 0 ns |
+| WPWS / TPWS | +5.166 ns / 0 ns |
+| Timing endpoints | 42,054; zero setup/hold failing endpoints |
+| Fully routed nets | 24,970 |
+| Routing errors | 0 |
+
+The critical path is `key_reg3_reg[13]/C` to `ciphertext_reg[124]/D`, with 12.122 ns reported delay. Logic contributes 3.772 ns (31.117%) and routing contributes 8.350 ns (68.883%); the path has 45 logic levels.
+
+Vivado estimated total power is 3.602 W (2.909 W dynamic and 0.693 W static; medium confidence). This is a vectorless estimate without an activity file, includes an estimated 2.680 W PS8 contribution, and is not a physical rail measurement. Do not interpret it as PL-only power or measured board power.
+
+These final-design results are separate from the before/after BRAM-wrapper utilization comparison in Section 8. That comparison contains utilization reports only and does not establish a before/after timing or power improvement.
+
+## 10. Evidence locations
 
 - `results/gcm_batch_run1/raw/`: 11-run CSV, JSON summaries and UART transcript
 - `results/gcm_batch_run1/reports/`: GCM timing, utilization and power reports
