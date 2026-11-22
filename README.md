@@ -114,6 +114,36 @@ The before-and-after Vivado utilization reports show the protected buffer wrappe
 
 For full architectural, protocol, and resource details, see [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md).
 
+## Visual Demonstration — Original, Encrypted and Recovered Images
+
+The following outputs were captured from the ZCU104 protected-chunk FPGA implementation. The recovered images demonstrate reconstruction after authenticated decryption.
+
+### 256 × 256 RGB Image
+
+| Original Input | Encrypted Visualization | Recovered Output |
+|---|---|---|
+| ![Original 256x256](results/visual_demo/256x256/input.png) | ![Encrypted 256x256](results/visual_demo/256x256/encrypted.png) | ![Recovered 256x256](results/visual_demo/256x256/recovered.png) |
+
+### 512 × 512 RGB Image
+
+| Original Input | Encrypted Visualization | Recovered Output |
+|---|---|---|
+| ![Original 512x512](results/visual_demo/512x512/input.png) | ![Encrypted 512x512](results/visual_demo/512x512/encrypted.png) | ![Recovered 512x512](results/visual_demo/512x512/recovered.png) |
+
+### Additional Test — 17 × 19
+
+- [Original image](results/visual_demo/17x19/input.png)
+- [Encrypted visualization](results/visual_demo/17x19/encrypted.png)
+- [Recovered image](results/visual_demo/17x19/recovered.png)
+
+### Raw Evidence
+
+Each test directory also contains the raw ciphertext, recovered plaintext, protected-chunk JSON summary and UART execution transcript.
+
+See [all visual demonstration evidence](results/visual_demo/).
+
+**Note:** `encrypted.png` is a visualization of encrypted data. The actual encrypted byte stream is `ciphertext.bin`.
+
 ## Reproduce the analysis
 
 ```powershell
@@ -162,3 +192,5 @@ This repository is a verified engineering research prototype, not a clinical sec
 ## License
 
 See [LICENSE](LICENSE).
+
+
