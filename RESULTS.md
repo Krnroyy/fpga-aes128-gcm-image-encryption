@@ -47,7 +47,28 @@ Whole-microsecond summaries show zero standard deviation because every image has
 
 ![Latency comparison](docs/images/dma_latency_comparison.png)
 
-## 3. Implementation results
+## 3. Cortex-A53 software AES-GCM baseline
+
+A separate software-only AES-128-GCM benchmark was run on the ZCU104 Cortex-A53 using Mbed TLS 3.6.7. The payload size was 4,096 bytes, with a 96-bit IV, 16-byte AAD and 16-byte authentication tag. The test used 5 warm-up iterations followed by 100 measured iterations. Timing used the ARM generic counter at 100 MHz.
+
+| Measurement | Encryption | Decryption |
+|---|---:|---:|
+| UART-reported average latency | 1,681 µs | 1,680 µs |
+| Average counter ticks | 168,104 | 168,069 |
+| Throughput | 2,379 KB/s | 2,379 KB/s |
+
+Functional checks passed:
+- AES-GCM encryption and decryption completed.
+- Decryption recovered the original plaintext.
+- A modified authentication tag was rejected.
+
+Evidence:
+- `results/a53_software_gcm/a53_software_gcm_uart_transcript.txt`
+- `CPU_SOFTWARE_BASELINE.md`
+
+**Comparison limitation:** these CPU values measure Mbed TLS AES-GCM operations on a 4 KiB payload. They are not directly comparable to FPGA protected-chunk timings, which include protected-buffer handling, GCM preparation, DMA/replay and zeroization for encryption, and split decryption into authentication-only and release phases. No controlled CPU-versus-FPGA speedup is claimed.
+
+## 4. Implementation results
 
 | Measurement | CTR-DMA | GCM-DMA |
 |---|---:|---:|
@@ -67,7 +88,7 @@ GCM added 2,577 LUTs and 1,458 flip-flops over CTR-DMA. Timing passed for both d
 
 ![Resource comparison](docs/images/dma_resource_comparison.png)
 
-## 4. Ciphertext statistics
+## 5. Ciphertext statistics
 
 The following GCM values are calculated only across the 10 dataset images. The additional 11th transaction is reserved for IV sensitivity.
 
@@ -79,7 +100,7 @@ The following GCM values are calculated only across the 10 dataset images. The a
 | Diagonal correlation | +0.001588 | 0.004141 | −0.005454 | +0.009134 |
 | Histogram chi-square | 258.377 | 29.388 | 218.302 | 306.490 |
 
-## 5. IV sensitivity
+## 6. IV sensitivity
 
 The same preprocessed input image was encrypted twice with two distinct 96-bit IVs.
 
@@ -93,13 +114,13 @@ The same preprocessed input image was encrypted twice with two distinct 96-bit I
 
 This measures ciphertext sensitivity to IV selection. It is not a plaintext-avalanche test.
 
-## 6. Security interpretation
+## 7. Security interpretation
 
 The controlled CTR experiment demonstrated malleability: modifying one ciphertext bit modified the corresponding recovered plaintext bit without detection. GCM rejected the same class of modification because the authentication tag failed. The application did not transmit the rejected buffer and zeroized it.
 
 The central engineering trade-off is therefore measurable: approximately 27% lower throughput and 15% more LUTs provide authenticated encryption and controlled plaintext release.
 
-## 7. Protected-chunk BRAM optimization
+## 8. Protected-chunk BRAM optimization
 
 The protected-chunk milestone introduces an on-chip buffer (`ProtectedChunkMemory_BRAM.v`) to store chunk ciphertext before authentication, eliminating external DDR release pre-verification.
 
@@ -126,7 +147,7 @@ Physical ZCU104 board validation verified complete exact recovery and tamper rej
 
 Compact physical board evidence is included under `results/protected_chunk_board_evidence/`: each run has a JSON summary and UART transcript, with SHA-256 hashes in `SHA256SUMS.txt`. Measured validation values are transcribed into the documentation and must not be altered. See [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md) for full protocol and implementation documentation.
 
-## 8. Evidence locations
+## 9. Evidence locations
 
 - `results/gcm_batch_run1/raw/`: 11-run CSV, JSON summaries and UART transcript
 - `results/gcm_batch_run1/reports/`: GCM timing, utilization and power reports

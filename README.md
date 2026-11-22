@@ -54,6 +54,21 @@ Data path: PS DDR → AXI DMA → AES-GCM → AXI DMA → PS DDR. The processor 
 
 ![Security-property comparison](docs/images/security_property_comparison.png)
 
+## Cortex-A53 software AES-GCM baseline
+
+A separate software-only benchmark was run on the ZCU104 Cortex-A53 using Mbed TLS 3.6.7. Each operation processed a 4,096-byte payload with AES-128-GCM, a 96-bit IV, 16-byte AAD and a 16-byte authentication tag. The benchmark used 5 warm-up iterations and 100 measured iterations, timed with the ARM generic counter at 100 MHz.
+
+| Metric | Software encryption | Software decryption |
+|---|---:|---:|
+| Average latency (UART-reported) | 1,681 µs | 1,680 µs |
+| Average counter ticks | 168,104 | 168,069 |
+| Throughput | 2,379 KB/s | 2,379 KB/s |
+| Functional verification | PASS | PASS |
+
+Encryption/decryption recovery passed, and a modified authentication tag was rejected. See [CPU_SOFTWARE_BASELINE.md](CPU_SOFTWARE_BASELINE.md) and [the UART transcript](results/a53_software_gcm/a53_software_gcm_uart_transcript.txt).
+
+**Measurement-scope note:** this CPU benchmark times Mbed TLS AES-GCM operations on a 4 KiB payload. The FPGA protected-chunk measurements include protected-buffer handling, GCM preparation, DMA/replay and zeroization for encryption; FPGA decryption is split into authentication-only and release phases. These timing boundaries are different, so these results should not be presented as a controlled CPU-versus-FPGA speedup.
+
 ## Image-security measurements
 
 Across the 10-image AES-GCM dataset:
@@ -122,6 +137,8 @@ Follow [BUILD_AND_RUN.md](BUILD_AND_RUN.md). The short sequence is:
 ## Documentation
 
 - [Detailed measured results](RESULTS.md)
+- [Cortex-A53 software baseline](CPU_SOFTWARE_BASELINE.md)
+- [Software benchmark UART transcript](results/a53_software_gcm/a53_software_gcm_uart_transcript.txt)
 - [Build and run guide](BUILD_AND_RUN.md)
 - [AES-GCM protected-chunk milestone](docs/PROTECTED_CHUNK.md)
 - [Security model and limitations](docs/SECURITY_MODEL.md)
