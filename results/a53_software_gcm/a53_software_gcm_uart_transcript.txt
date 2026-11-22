@@ -1,0 +1,29 @@
+PS C:\WINDOWS\system32> python -m serial.tools.miniterm COM11 115200
+--- Miniterm on COM11  115200,8,N,1 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+Zynq MP First Stage Boot Loader
+Release 2026.1   Sep 10 2026  -  11:01:01
+PMU-FW is not running, certain applications may not be supported.
+
+====================================
+ SOFTWARE AES-128-GCM BENCHMARK
+ ZCU104 - Cortex-A53
+====================================
+Counter frequency: 100000000 Hz
+AES key size: 128 bits
+Payload size: 4096 bytes
+AAD size: 16 bytes
+Tag size: 16 bytes
+Iterations: 100
+Encryption/decryption recovery: PASS
+Modified authentication tag rejection: PASS
+
+========== RESULTS ==========
+Average encryption: 1681 us
+Average decryption: 1680 us
+Encryption throughput: 2379 KB/s
+Decryption throughput: 2379 KB/s
+Encryption average ticks: 168104
+Decryption average ticks: 168069
+=============================
+SOFTWARE BENCHMARK COMPLETE
